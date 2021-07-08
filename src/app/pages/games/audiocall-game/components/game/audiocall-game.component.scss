@@ -1,0 +1,266 @@
+@import "variables";
+@import "mixins";
+
+%font-normal {
+  color: $main-text-color;
+  background-color: $footer-slider-bg;
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+:host(.fullscreen) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 10000;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(0.25turn, $footer-creds-bg, $main-bg-color, $footer-link-color);
+
+  .audiocall-game {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    padding-top: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background: rgba(197, 220, 249, 0.85);
+
+      .speaker {
+        width: 125px;
+        margin: 10px auto;
+        background-color: cornsilk;
+        border: 2px solid $footer-slider-bg;
+        border-radius: 20%;
+
+          img {
+            width: 125px;
+          }
+      }
+
+      .speaker:hover {
+        cursor: pointer;
+        transform: scale(1.15);
+      }
+
+      .words-list {
+        position: relative;
+        width: 295px;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+
+          .words {
+            @extend %font-normal;
+            position: relative;
+            margin: 10px auto;
+            width: 159px;
+            height: 50px;
+            border-radius: 19px;
+            padding: 5px;
+            border: 2px double $main-text-color;
+            font-size: 1.19rem;
+          }
+
+          .words:hover {
+            cursor: pointer;
+            transform: scale(1.15);
+          }
+
+          .errorStyle {
+            background-color: tomato;
+          }
+
+          .correct {
+            background-color: greenyellow;
+          }
+
+      }
+
+      .additional-buttons {
+        display: flex;
+        width: 250px;
+        margin: 10px auto;
+        justify-content: space-between;
+
+          .help,
+          .go-back-btn {
+            @extend %font-normal;
+            position: relative;
+            margin: 10px auto;
+            width: 110px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            border: 2px double ;
+            background-color: cornsilk;
+          }
+
+          button:hover {
+            cursor: pointer;
+            color: $footer-slider-bg;
+            transform: scale(1.15);
+          }
+      }
+
+      .answer {
+        @extend %font-normal;
+        display: block;
+        width: 195px;
+        margin: 0 auto;
+        color: $main-text-color;
+        background-color: yellowgreen;
+        border-radius: 5px;
+      }
+
+      .forward {
+        display: none;
+        position: relative;
+        margin: 10px auto;
+        width: 80px;
+        height: 39px;
+        border-radius: 5px;
+        border: 2px double ;
+        background-image: url(../../../../../../assets/img/forward.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+        outline: none;
+      }
+
+      .active {
+        display: block;
+      }
+  }
+
+  .word-info {
+      display: block;
+      width: 250px;
+      height: 145px;
+      margin: 10px auto;
+      margin-bottom: 0;
+      border-radius: 25px;
+      background: linear-gradient($main-bg-color, greenyellow);
+      box-shadow: 2px 2px 5px $main-bg-color;
+      text-align: center;
+
+        img {
+          width: 145px;
+          border: 2px solid $main-text-color;
+          border-radius: 10px;
+        }
+
+        p {
+          @extend %font-normal;
+          margin: 5px;
+        }
+  }
+
+  .fullscreen-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    border: none;
+      img {
+        width: 49px;
+      };
+  }
+  .fullscreen-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+.end-game-wrapper {
+  background-image: url('../../../../../../assets/img/sound.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+    .end-game {
+      display: flex;
+      width: 285px;
+      margin: 10px auto;
+      flex-direction: column;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      background: linear-gradient($main-bg-color, $footer-creds-bg);
+
+        .words-and-people {
+          width: 250px;
+          height: auto;
+          margin: 10px auto;
+          border-radius: 10%;
+        }
+
+        .statistic {
+          text-align: center;
+        }
+
+        h4 {
+          @extend %font-normal;
+          font-weight: 700;
+          font-size: 1.5rem;
+          background: none;
+        }
+
+
+        .result-correct {
+          @extend %font-normal;
+          color: yellowgreen;
+          font-weight: 700;
+          background: none;
+        }
+
+        .result-errors {
+          @extend %font-normal;
+          font-weight: 700;
+          color: tomato;
+          background: none;
+        }
+
+        p {
+          @extend %font-normal;
+          font-weight: 700;
+          text-decoration: underline;
+          background: none;
+        }
+
+        .back-to-game-menu {
+          @extend %font-normal;
+          position: relative;
+          margin: 10px auto;
+          width: 110px;
+          text-align: center;
+          border-radius: 5px;
+          padding: 5px;
+          border: 2px double ;
+          background-color: cornsilk;
+        }
+
+        .word-track {
+          @extend %font-normal;
+          display: flex;
+          margin-bottom: 10px;
+          margin-left: 5px;
+          background: none;
+
+            .track-speaker {
+              width: 25px;
+            }
+
+            .track-speaker:hover {
+              cursor: pointer;
+              transform: scale(1.05);
+            }
+        }
+    }
+  }

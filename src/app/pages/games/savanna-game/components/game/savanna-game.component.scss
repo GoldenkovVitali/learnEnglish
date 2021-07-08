@@ -1,0 +1,193 @@
+@import 'variables';
+:host(.fullscreen) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  .savanna-body {
+    height: 100vh;
+  }
+  .fullscreen-btn {
+    img {
+      margin-top: 55vh;
+    }
+  }
+}
+.savanna-body {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-image: url('../../../../../../assets/img/bg-savanna1.jpg');
+  z-index: 2;
+  @media (max-width: 1280px) {
+    height: calc(100vh - 160px);
+  }
+  @media (max-width: 1025px) {
+    height: calc(100vh - 54px);
+  }
+}
+
+.savanna-second-page {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.fullscreen-btn {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 5px;
+  outline: none;
+  background: none;
+  border: none;
+  img {
+    width: 49px;
+    margin-top: 35vh;
+    margin-left: 85vw;
+  }
+}
+.fullscreen-btn:hover {
+  cursor: pointer;
+}
+
+.savanna-right-answers {
+  color: rgb(29, 245, 126) !important;
+}
+
+.savanna-wrong-answers {
+  color: rgb(151, 8, 15) !important;
+}
+
+.savanna-word-wrapper {
+  position: absolute;
+  top: 62%;
+  left: 32%;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  @media (max-width: 1200px) {
+    top: 45%;
+    left: 6%;
+    width: 71%;
+    flex-direction: column;
+  }
+}
+
+.savanna-word-button {
+  position: relative;
+  width: 22%;
+  height: 27%;
+  margin-top: 5px;
+  padding: 4px;
+  transform: translate(-50%, 0);
+  color: #ffffff;
+  font-size: 1.3rem;
+  overflow: hidden;
+  background-color: rgba(184, 187, 27, 0.37);
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  &:focus,
+  &:hover {
+    letter-spacing: 1.1px;
+    box-shadow: 0 0 16px rgba(190, 219, 24, 0.92);
+  }
+  @media (max-width: 900px) {
+    width: 57%;
+  }
+}
+
+.savanna-hearts-wrapper {
+  position: absolute;
+  right: 5vw;
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.savanna-spinner-diamond {
+  position: absolute;
+  top: 71vh;
+  left: 51vw;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  text-align: center;
+  align-items: baseline;
+}
+
+.savanna-gif-diamond {
+  border-radius: 30px 30px 50px 50px;
+}
+
+.savanna-one-heart {
+  filter: invert(1);
+  width: 25px;
+  height: 25px;
+}
+
+.savanna-grey-heart {
+  filter: invert(0.4);
+}
+
+.savanna-top-word {
+  position: absolute;
+  top: 9vh;
+  left: 37vw;
+  width: 30%;
+  height: 64%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.savanna-current-word {
+  position: absolute;
+  top: 10%;
+}
+.go-back-btn {
+  margin: 20px;
+  color: white;
+  font-size: 1.3rem;
+  overflow: hidden;
+  background-color: rgba(184, 187, 27, 0.37);
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  &:focus,
+  &:hover {
+    letter-spacing: 1.1px;
+    box-shadow: 0 0 16px rgba(190, 219, 24, 0.92);
+  }
+}
+.savanna-animated {
+  top: 85%;
+  transition: top 7s linear 1s;
+}
+
+.savanna-top-word {
+  position: absolute;
+  top: 13% !important;
+}

@@ -1,0 +1,16 @@
+<header
+  app-header
+  (clickAutnBtnEvent)="openModal($event)"
+  [isAuthenticated]="isAuthenticated"
+  (isLogin)="auth($event)"
+></header>
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+<footer app-footer *ngIf="footerVisibility"></footer>
+
+<app-registration
+  [isShow]="showModal"
+  (clickAutnBtnEvent)="openModal($event)"
+  (clickLoginEvent)="auth($event)"
+></app-registration>

@@ -1,0 +1,43 @@
+<div class="container-audiocall-promo">
+  <div class="game-description">
+    <h4>Игра на тренировку навыков аудирования.</h4>
+    <div class="description-text">
+      <p>В процессе игры необходимо угадать слово, произнесенное на английском языке.
+        Для воспроизведения звука необходимо кликнуть на иконку динамика.
+        При выборе правильного/неправильного ответа звучит соответствующий сигнал.
+        В конце появится статистика по количеству угаданных/неугаданных слов и аудио-дорожки всех слов,
+        участвовавших в игре.
+      </p>
+
+      <p>Выбирайте слово кликом мыши или нажатием соответствующей клавиши с номером слова.</p>
+    </div>
+  </div>
+
+  <div class="audiocall-previous-settings" *ngIf="startFromMenu">
+    <p>Выбор слов для игры</p>
+    <div class="enter-group-and-pages">
+      <label for="groop">Введите номер раздела (0 - 5)</label>
+      <input
+      [(ngModel)] = "groupValue"
+      id="group"
+      class="group-number"
+      >
+    </div>
+
+  <div class="enter-group-and-pages">
+    <label for="page">Введите номер страницы (0 - 29)</label>
+    <input
+    [(ngModel)] = "pageValue"
+    id="page"
+    class="page-number"
+    >
+  </div>
+
+  </div>
+
+  <a routerLink="audiocallgame" [queryParams]="{group: groupValue, page: pageValue}" class="start-link">
+    <button class="start-game">Начать</button>
+  </a>
+
+
+</div>

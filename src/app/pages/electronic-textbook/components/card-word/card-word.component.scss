@@ -1,0 +1,59 @@
+.card {
+  width: 320px;
+  height: 92%;
+  padding-top: 5px;
+  &:hover {
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%),
+      0px 1px 8px 0px rgb(0 0 0 / 12%);
+  }
+  .mat-card-actions {
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    .optional-word {
+      display: flex;
+      gap: 15px;
+      &__hard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+      &__repeat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template:
+      'word image image' auto
+      'word image image' auto
+      'examples examples examples' auto
+      / auto;
+    &_word {
+      grid-area: word;
+      .word {
+        font-weight: bold;
+      }
+    }
+    &_image {
+      grid-area: image;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      img {
+        width: 180px;
+        height: 100px;
+        border-radius: 4px;
+      }
+    }
+    &_examples {
+      grid-area: examples;
+    }
+  }
+}

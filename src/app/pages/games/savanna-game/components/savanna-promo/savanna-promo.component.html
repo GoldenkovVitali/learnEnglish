@@ -1,0 +1,40 @@
+<div class="container-audiocall-promo">
+  <div class="game-description">
+    <h4>Игра-тренажер по переводу пассивного изученного словаря в активную стадию.</h4>
+    <div class="description-text">
+      <p>В процессе игры появится падающее вниз слово на английском языке и четыре варианта перевода. Необходимо выбрать правильный ответ.
+        В конце появится статистика по количеству угаданных/неугаданных слов.
+      </p>
+
+      <p>Выбирайте слово кликом мыши или нажатием соответствующей клавиши с номером слова.</p>
+    </div>
+  </div>
+
+  <div class="audiocall-previous-settings" *ngIf="startFromMenu">
+    <p>Выбор слов для игры</p>
+    <div class="enter-group-and-pages">
+      <label for="groop">Введите уровень сложности: (0 - 5)</label>
+      <input
+      [(ngModel)] = "groupValue"
+      id="group"
+      class="group-number"
+      >
+    </div>
+
+  <div class="enter-group-and-pages">
+    <label for="page">Введите номер страницы (0 - 29)</label>
+    <input
+    [(ngModel)] = "pageValue"
+    id="page"
+    class="page-number"
+    >
+  </div>
+
+  </div>
+
+  <a routerLink="savannagame" [queryParams]="{group: groupValue, page: pageValue}" class="start-link">
+    <button class="start-game">Начать</button>
+  </a>
+
+
+</div>

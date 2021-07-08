@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Roboto+Condensed&family=Source+Sans+Pro&display=swap');
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  font-family: $font-main;
+  color: $main-text-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

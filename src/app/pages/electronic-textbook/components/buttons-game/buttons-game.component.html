@@ -1,0 +1,25 @@
+<a routerLink="/words-puzzle" [queryParams]="{selectedGroup: groupValue, selectedPage: pageValue}">
+  <button mat-icon-button matTooltip="КОНСТРУКТОР" (click)="onClick()">
+    <mat-icon>extension</mat-icon>
+  </button>
+</a>
+
+<a routerLink="/games/sprint" [queryParams]="{level: groupValue, round: pageValue}" >
+  <button mat-icon-button matTooltip="СПРИНТ" (click)="onClick()">
+    <mat-icon>directions_run</mat-icon>
+  </button>
+</a>
+
+<a routerLink="/games/audiocall/audiocallgame" [queryParams]="{group: groupValue, page: pageValue}">
+<button mat-icon-button matTooltip="АУДИОВЫЗОВ" (click)="onClick()">
+    <mat-icon>surround_sound</mat-icon>
+</button>
+</a>
+<a routerLink="/games/savanna/savannagame" [queryParams]="{group: groupValue, page: pageValue}">
+  <button mat-icon-button matTooltip="САВАННА" (click)="onClick()">
+    <mat-icon>nature</mat-icon>
+  </button>
+</a>
+
+<!--   -->
+

@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  @include media-max-width {
+    @include main-footer-grid;
+    & .dev-team__heading {
+      & .dev-team__title {
+        font-size: 46px;
+        margin: 68px 0 0 140px;
+      }
+    }
+    & .dev-team__content {
+      & .dev-team__name {
+        font-size: 46px;
+        margin: 68px 0 0 200px;
+      }
+      & .dev-team__github {
+        margin-left: 100px;
+        & a {
+          color: $footer-link-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    & .dev-team__arrows {
+      & span {
+        font-size: 46px;
+        margin: 68px 10px 0 10px;
+      }
+    }
+  }
+  @include media-desktop {
+  }
+  @include media-tablet-landscape {
+  }
+  @include media-tablet-portrait {
+  }
+  @include media-mobile {
+  }
+
+  display: grid;
+  color: $footer-text-color;
+  height: 20vh;
+
+  & .dev-team__slider {
+    background-color: $footer-slider-bg;
+    height: 100%;
+    display: inline-block;
+    & div {
+      float: left;
+    }
+    & .dev-team__background {
+      width: 100px;
+      height: 20vh;
+      float: right;
+      background: url('../../../../../assets/img/triangle-bg.png') no-repeat;
+      background-position: right;
+      background-size: contain;
+    }
+  }
+
+  & .dev-team__heading {
+    & .dev-team__title {
+      display: block;
+    }
+    background-color: $footer-creds-bg;
+    height: 100%;
+  }
+
+  & .dev-team__content {
+    & span {
+      display: block;
+    }
+    & .dev-team__github {
+      & a {
+        color: $footer-link-color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  & .dev-team__arrows {
+    & span {
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+}

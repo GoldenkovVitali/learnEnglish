@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'mixins';
+
+.main {
+  @include media-max-width {
+  }
+  @include media-desktop {
+  }
+  @include media-tablet-landscape {
+  }
+  @include media-tablet-portrait {
+  }
+  @include media-mobile {
+  }
+
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+    background-color: rgba(177, 177, 177, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #2a9fd683;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.863);
+  }
+}

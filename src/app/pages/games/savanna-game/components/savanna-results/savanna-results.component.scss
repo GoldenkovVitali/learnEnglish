@@ -1,0 +1,59 @@
+@import "variables";
+
+.savanna-body {
+    width: 100vw;
+    height: 80vh;
+    background-image: url('../../../../../../assets/img/bg-savanna1.jpg');
+    background-size: cover;
+    z-index: 2;
+    @media (max-width: 1280px) {
+      height: calc(100vh - 160px);
+    }
+    @media (max-width: 1025px) {
+      height: calc(100vh - 54px);
+    }
+  }
+
+
+.savanna-results {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    color:white;
+}
+
+.savanna-new-game-button {
+    position: absolute;
+    top: 60%;
+    left: 52%;
+    width: 20%;
+    height: 10%;
+    transform: translate(-50%, 0);
+    color: #ffffff;
+    font-size: 1.3rem;
+    overflow: hidden;
+    background-color: rgba(184, 187, 27, 0.37);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    &:focus,
+    &:hover {
+    letter-spacing: 1.1px;
+    box-shadow:
+        0 0 16px rgba(190, 219, 24, 0.92);
+    }
+}
+
+.savanna-results-correct {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}
+
+.savanna-results-errors {
+    position: absolute;
+    top: 42%;
+    left: 45%;
+}

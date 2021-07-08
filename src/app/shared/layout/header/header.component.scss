@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  display: flex;
+  @include media-max-width {
+    @include main-header-grid;
+    height: 20vh;
+    & div {
+      margin-top: 30px;
+    }
+  }
+  @include media-desktop {
+    height: 160px;
+    padding: 0 2px;
+    & div {
+      margin-top: 20px;
+    }
+  }
+  @include media-tablet-landscape {
+  }
+  @include media-tablet-portrait {
+  }
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  background: url('../../../../assets/img/header-bg.png') no-repeat;
+  background-position: right;
+  background-size: contain;
+  padding: 0 2px;
+}
+
+.auth-user {
+  display: flex;
+  align-items: center;
+}
+
+.auth-user img {
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.auth-user p {
+  margin-right: 10px;
+}
+
+.logout-button {
+  width: 68px;
+  height: 36px;
+  margin-right: 10px;
+}

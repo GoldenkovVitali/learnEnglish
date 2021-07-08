@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>НАСТРОЙКИ</h1>
+<div mat-dialog-content>
+  <form class="form" [formGroup]="options" (ngSubmit)="onFormSubmit()" ngNativeValidate>
+    <mat-slide-toggle formControlName="isWordTranslate">отображать перевод изучаемого слова </mat-slide-toggle>
+    <mat-slide-toggle formControlName="isTextExampleTranslate">отображать перевод предложений</mat-slide-toggle>
+    <mat-slide-toggle formControlName="isButtonAdd">отображать кнопку "Сложные слова"</mat-slide-toggle>
+    <mat-slide-toggle formControlName="isButtonDelete">отображать кнопку "Удалённые слова"</mat-slide-toggle>
+    <button class="save" mat-raised-button type="submit">СОХРАНИТЬ</button>
+  </form>
+</div>

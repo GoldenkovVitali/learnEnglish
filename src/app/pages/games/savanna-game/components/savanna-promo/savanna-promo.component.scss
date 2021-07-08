@@ -1,0 +1,67 @@
+@import "variables";
+
+.container-audiocall-promo {
+  position: relative;
+  width: 500px;
+  margin: 10px auto;
+  text-align: center;
+  background-image: url(../../../../../../assets/img/promo-img.png);
+
+    h4,
+    .start-game {
+      color: $main-text-color;
+      background-color: $footer-slider-bg;
+      font-family: $font-main;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+
+    .game-description {
+      position: relative;
+      display: block;
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      color: $main-text-color;
+      background-color: $footer-creds-bg;
+      font-family: $font-main;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .audiocall-previous-settings {
+      display: flex;
+      width: 225px;
+      flex-direction: column;
+      margin: 10px auto;
+      color: $main-text-color;
+      background-color: $footer-creds-bg;
+      font-family: $font-main;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+
+        .enter-group-and-pages {
+          display: flex;
+          margin: 10px;
+          justify-content: space-between;
+        }
+
+        input,
+        label {
+          text-align: center;
+        }
+
+        input {
+          width: 25px;
+        }
+    }
+
+    .start-game {
+      background-color: $footer-creds-bg;
+      box-shadow: 9px 9px 5px $footer-slider-bg;
+    }
+}
+

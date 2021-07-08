@@ -1,0 +1,109 @@
+<button (click)="changeFullscreenMode()" class="fullscreen-btn">
+  <img src="../../../../../../assets/img/audiocall-fullscreen.png" alt="fullscreen-mode" />
+</button>
+
+<div *ngIf="!isLevelChosen" class="level-choose">
+  <select (change)="onChangeGroup($event.target.value)">
+    <option value="1" disabled selected>Выбрать уровень сложности</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+  <select (change)="onChangePage($event.target.value)">
+    <option value="1" disabled selected>Выбрать страницу слов</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+  </select>
+  <button (click)="getData()" class="level-choose__choose-level-btn">Выбрать</button>
+</div>
+
+<div class="wrapper" *ngIf="word && !showResult">
+  <div class="wrapper-content">
+    <div class="wrapper-content__translate-word">
+      {{ translateWord }}
+    </div>
+    <div class="wrapper-content__text">
+      <span>
+        Собери слово из букв(можете использовать клавиатуру, но только на АНГЛИЙСКОЙ РАСКЛАДКЕ!!!!!)
+      </span>
+    </div>
+    <div class="right-letter-content">
+      <button
+        [ngClass]="{ empty: !letter, currentBlock: placeIndex === index }"
+        class="letter-box right-letter"
+        *ngFor="let letter of rightLettersArr; let index = index"
+      >
+        {{ letter }}
+      </button>
+    </div>
+    <div class="ready-letter-content" #keysBlock>
+      <button
+        class="letter-box ready-letter"
+        (click)="checkLetter(letter, index, $event)"
+        *ngFor="let letter of letterArr; let index = index"
+        [ngClass]="{ error: isMistake }"
+      >
+        {{ letter }}
+      </button>
+    </div>
+
+    <div *ngIf="isEndRaund">
+      <img [src]="baseImgUrl" alt="img-association" />
+      <div>{{ context }}</div>
+    </div>
+
+    <div *ngIf="!isEndRaund; else continueBtn">
+      <span class="wrapper-content__enter">enter</span>
+
+      <button class="wrapper-content__dont-know-button" (click)="showAnswer()">
+        <span>не знаю :(</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #continueBtn>
+  <span class="wrapper-content__enter">enter</span>
+
+  <button class="wrapper-content__continue-button" (click)="nextRaund()">
+    <span>Продолжить</span>
+  </button>
+</ng-template>
+
+<div *ngIf="showResult" class="show-result">
+  <div>Правильных: {{ rightAnswers }}</div>
+  <div>Неправильных: {{ wrongAnswers }}</div>
+  <button class="show-result__menu-btn" (click)="continueGame()">Продолжить</button>
+  <button class="show-result__menu-btn" (click)="reload()">Изменить сложность</button>
+</div>

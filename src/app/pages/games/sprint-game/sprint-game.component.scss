@@ -1,0 +1,376 @@
+* { padding:0; margin:0; box-sizing:border-box; }
+.container { 
+	width:100%;
+  max-width:1020px;
+	margin:0px auto; 
+}
+img {
+  border-radius: 8px;
+}
+h1{
+text-align: center ;
+display:block;
+font-family: Arial,sans-serif;
+color: #483d8b;
+font-weight: 500;
+line-height: 1.2;
+}
+
+h3 {
+  display: block;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center 	
+}
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  padding: 0 60px 0 75px;
+  background-color: #fff;
+  box-shadow: 1px 5px 14px rgb(0 0 0 / 10%);
+}
+.start-screen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 150px;
+  font-size: 21px;
+  color: #3f51b5;
+  text-align: center;
+  background-image:url(https://image.freepik.com/free-vector/couple-practicing-trail-run-training_74855-5474.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 1px 5px 14px rgb(0 0 0 / 10%);
+  line-height: 1.5;
+} 
+.start-screen-no-background{
+  text-align: center;
+  font-size: 21px;
+   color: #3f51b5;
+}
+.game{
+  padding: 0px 0px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 500;
+  background-image: url(https://image.freepik.com/free-vector/couple-practicing-trail-run-training_74855-5474.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+.game-switched-off{
+   margin: auto;
+    font-size: 20px;
+    font-weight: 500;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .game-full-screen{
+    position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     margin: auto;
+     font-size: 20px;
+     font-weight: 500;
+     background-image: url(https://image.freepik.com/free-vector/couple-practicing-trail-run-training_74855-5474.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+   }
+.closeButton{
+  display: inline-block;
+  color: white;
+  padding: 10px 10px;
+  margin: 27px 0px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #da1a58  0%, #e61414 51%, #da1a58  100%);
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button-right {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 5px;
+    margin-bottom:10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #b29eef  0%, #18b372 51%, #b29eef  100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+  .gradient-button-sound{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 40px; 
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  } 
+  .audio-button-class{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 40px; 
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+
+  .gradient-button-background{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 40px; 
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+  .gradient-button-statistics{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 40px; 
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+
+  .gradient-button-wrong {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 5px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #d81781 0%, #e61414 51%, #d81781 100%);
+    background-size: 100% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+
+  .gradient-button-right:hover {
+    background-position: right center;
+  }
+  .gradient-button-wrong:hover {
+    background-position: right center;
+  }
+  .word-and-translation{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18pt;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+  }
+.game-bar{
+  display: block;
+
+}
+.level__select{
+  color: rgb(19, 18, 18);
+  margin-right: 20px;
+}
+.round__select{
+    color: rgb(19, 18, 18);
+}
+.statistic{
+  top: 0;
+  left: 0;
+  padding: 20px 30px;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+.statistic-full-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+li {
+  cursor: pointer;
+}
+
+li.active {
+  font-weight: bold;
+  font-size: 40px;
+ box-shadow: alpha($color: #000000);
+}
+.wordStatisticContainer{
+  display: flex;
+  margin-left:20%;
+  padding-right: 20px;
+  
+}
+
+.timer-css{
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #5f4c72 0%, #3f2e8d 51%, #5f4c72 100%);
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  transition: .5s;
+  border-radius: 50%;
+}
+#wordsYouKnow{
+  margin-right: 2px;
+
+}
+.hiddenScore{
+  transition: all linear 0.5s;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  color: rgb(231, 247, 10);
+  position: absolute;
+  border-radius: 30%;
+}
+.hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-2000px;
+  left: 2000px;
+}
+.hidden{
+  display: none;
+}
+
+@-webkit-keyframes pulsate {
+  50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px rgb(238, 238, 8), 0 0 8px #fff; }
+ }
+ @keyframes pulsate {
+  50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px rgb(252, 252, 5), 0 0 8px #fff; }
+ }
+ #blink7 {
+  margin-top: 151px;
+  margin-left: 50%;
+   text-shadow: 0 -1px rgba(0,0,0,.1);
+   color: #3f2e8d;
+   opacity: 0.4;
+    -webkit-animation: pulsate 1.2s linear infinite;
+   animation: pulsate 1.2s linear infinite;
+ }
+ .chosenWordCard{
+   position: relative;
+    width: 80%;
+    max-width: 550px;
+    margin: 10px auto;
+    padding: 1em;
+    background-color: whitesmoke;
+    box-shadow:
+     0 1px 4px rgba(0, 0, 0, .3),
+     -23px 0 20px -23px rgba(0, 0, 0, .8),
+     23px 0 20px -23px rgba(0, 0, 0, .8),
+     0 0 40px rgba(0, 0, 0, .1) inset;
+ }
+ .closeWordCardButton{
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+ }
+ .day-table-statistics{
+ text-decoration: none;
+  display: inline-block;
+  position:absolute;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  background-size: 100% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+  background-color:white;
+ }
+ .confettiClass{
+  background-image: url(https://i.gifer.com/origin/1a/1af8d3b487b77085d5288814f151e1de.gif);
+ }
+ .word-and-translation{
+    text-shadow: 1px 1px white, -1px -1px #333;
+      font-family: 'Montserrat', sans-serif;
+ }
+ .start-button{
+
+text-decoration: none;
+display: inline-block;
+color: white;
+padding: 10px 5px;
+margin: 0px 10px;
+border-radius: 10px;
+font-family: 'Montserrat', sans-serif;
+letter-spacing: 2px;
+background-image: linear-gradient(to right, #9fa5cc 0%, #3f51b5 51%, #9fa5cc 100%);
+background-size: 100% auto;
+box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+transition: .5s;
+ }
+@media (min-width: 760px)  {
+.closeButton{
+  margin: 75px 0px;
+}
+.timer{
+  margin:46px 20px;
+} 
+.show-words-and-translation{
+  margin:40px;
+}
+.game-bar{
+   margin:73px;
+}
+#blink7{
+  margin-top: 300px;
+  margin-left: 50%;
+}
+.wordStatisticContainer {
+    margin-left: 36%;
+ 
+}
+}

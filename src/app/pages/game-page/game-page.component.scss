@@ -1,0 +1,87 @@
+@use  '../../../scss/variables.scss';
+@import 'variables';
+@import 'mixins';
+$background_link: #55C1FF;
+$border_color: #5887FF;
+
+.game-page {
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    width: 750px;
+    margin: 10px auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+
+    @include media-tablet-landscape {
+      display: flex;
+      width: auto;
+      flex-direction: column;
+    }
+
+    @include media-tablet-portrait {
+      display: flex;
+      width: auto;
+      flex-direction: column;
+    }
+
+    @include media-mobile {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__link {
+    display: flex;
+    width: 250px;
+    height: 90px;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$footer-creds-bg;
+    border-radius: 8.5rem;
+    border: 0.3rem solid variables.$footer-slider-bg;
+    cursor: pointer;
+    color: variables.$main-text-color;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: variables.$font-main;
+
+      img {
+        width: 50px;
+        margin-left: 5px;
+      }
+  }
+  &__joystick {
+      width: 250px;
+      margin: auto;
+      z-index: 1;
+    }
+  &__bg {
+      width: 250px;
+    }
+
+    h4 {
+      width: 250px;
+      margin: 10px auto;
+      text-align: center;
+      color: variables.$main-text-color;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-family: variables.$font-main;
+    }
+
+    .game-page__link:hover {
+      transform: scale(1.05);
+    }
+
+    .game-page__bg:hover {
+      transform: scale(1.05);
+    }
+}

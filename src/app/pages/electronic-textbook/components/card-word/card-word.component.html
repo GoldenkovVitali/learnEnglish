@@ -1,0 +1,50 @@
+<mat-card class="card" >
+  <mat-card-actions>
+    <div class="optional-word">
+      <div *ngIf="word.userWord && word.userWord.optional.repeat>=0" class="optional-word__repeat">
+        <mat-icon>repeat</mat-icon>
+         <span>{{word.userWord.optional.repeat}}</span>
+        </div>
+        <div class="optional-word__hard"><span>{{word.userWord && word.userWord.difficulty === 'hard' ? 'сложное' : ''}}</span></div>
+    </div>
+    <div>
+
+    <button mat-icon-button matTooltip="Прослушать слово" (click)="playAudio()" [disabled]="!textbookService.isPlay">
+      <mat-icon>volume_up</mat-icon>
+    </button>
+    <button *ngIf="cardInfo.isButtonAdd && !isDictionary" mat-icon-button matTooltip="Добавить в сложные" (click)="addWordHard()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button *ngIf="cardInfo.isButtonDelete && !isDictionary" mat-icon-button matTooltip="Удалить слово" (click)="addWordDeleted()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button *ngIf="isDictionary && word.userWord && word.userWord.difficulty === 'hard'"
+     mat-icon-button matTooltip="Убрать из сложных" (click)="removeFromHard()">
+      <mat-icon>reply</mat-icon>
+    </button>
+    <button *ngIf=" isDictionary && word.userWord && word.userWord.optional.delete"
+     mat-icon-button matTooltip="Убрать из удаленных" (click)="removeFromDeleted()">
+      <mat-icon>restore_from_trash</mat-icon>
+    </button>
+  </div>
+  </mat-card-actions>
+  <mat-card-content>
+    <div class="card__content">
+      <div class="card__content_word">
+        <p class="word">{{word.word | uppercase}}</p>
+        <p>{{word.transcription}}</p>
+        <p *ngIf="cardInfo.isWordTranslate">{{word.wordTranslate}}</p>
+      </div>
+      <div class="card__content_image">
+        <img src="{{urlImage}}" alt="word.word">
+       <ng-template></ng-template>
+      </div>
+      <div class="card__content_examples">
+        <p [innerHTML]="word.textExample"></p>
+        <p *ngIf="cardInfo.isTextExampleTranslate" [innerHTML]="word.textExampleTranslate"></p>
+        <p [innerHTML]="word.textMeaning"></p>
+        <p *ngIf="cardInfo.isTextExampleTranslate" [innerHTML]="word.textExampleTranslate"></p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,49 @@
+<div class="savanna-body">
+  <div class="savanna-second-page">
+
+    <div class="savanna-hearts-wrapper">
+      <img class="savanna-one-heart {{heartsPlay[4]}}" src="./assets/img/heart.svg"/>
+      <img class="savanna-one-heart {{heartsPlay[3]}}" src="./assets/img/heart.svg"/>
+      <img class="savanna-one-heart {{heartsPlay[2]}}" src="./assets/img/heart.svg"/>
+      <img class="savanna-one-heart {{heartsPlay[1]}}" src="./assets/img/heart.svg"/>
+      <img class="savanna-one-heart {{heartsPlay[0]}}" src="./assets/img/heart.svg"/>
+    </div>
+
+    <div class="savanna-top-word">
+      <span class="savanna-lvl__text savanna-current-word {{className}}" id="savanna-falling-word"> {{savannaFallingWord}} </span>
+    </div>
+
+    <div class="savanna-word-wrapper">
+      <button class="savanna-word-button savanna-answer-1"
+      (click)="checkAnswer(translations[0].wordTranslate)"
+      >
+      1. {{translations[0].wordTranslate}}
+    </button>
+      <button class="savanna-word-button savanna-answer-2"
+      (click)="checkAnswer(translations[1].wordTranslate)"
+      >2. {{translations[1].wordTranslate}}
+    </button>
+      <button class="savanna-word-button savanna-answer-3"
+      (click)="checkAnswer(translations[2].wordTranslate)"
+      >
+      3. {{translations[2].wordTranslate}}
+    </button>
+      <button class="savanna-word-button savanna-answer-4"
+      (click)="checkAnswer(translations[3].wordTranslate)"
+      >
+      4. {{translations[3].wordTranslate}}
+    </button>
+    </div>
+ 
+    <div class="additional-buttons">
+      <button routerLink="savannaresults" class="go-back-btn">Завершить</button>
+    </div>
+
+    <div class="savanna-spinner-diamond">
+      <img class="savanna-gif-diamond" width={{diamonWidth}} src='./assets/img/diamond.gif'/>
+    </div>
+    <button (click)="changeFullscreenMode()" class="fullscreen-btn">
+      <img src="../../../../../../assets/img/savanna-fullscreen.png" alt="fullscreen-mode">
+    </button>
+  </div>
+</div>

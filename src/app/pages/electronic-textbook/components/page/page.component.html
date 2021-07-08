@@ -1,0 +1,10 @@
+<section class="wrapper-page" [style.background-color]='backgroundColor' >
+  <div class="container-words" *ngIf="isArray && loadingService.isLoading$ | async; else elseBlock">
+    <ng-container *ngIf="array.length; else notWord" >
+   <app-card-word [isDictionary]="isDictionary" *ngFor="let item of array" [word]='item'></app-card-word>
+  </ng-container>
+   <ng-template #notWord><h2>Нет слов в данной категории</h2></ng-template>
+  </div>
+  <ng-template #elseBlock><app-spinner></app-spinner></ng-template>
+</section>
+

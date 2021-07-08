@@ -1,0 +1,13 @@
+<button mat-icon-button matTooltip="Предыдущая страница" (click)="onClickPage('back')" [disabled]="!page">
+  <mat-icon>navigate_before</mat-icon>
+</button>
+<mat-form-field class="select">
+  <mat-label>Page</mat-label>
+  <select matNativeControl (change)="onChangePage($event)">
+    <option [value]="option" *ngFor="let option of quantityPages" [selected]="page === option">{{option + 1}}
+    </option>
+  </select>
+</mat-form-field>
+<button mat-icon-button matTooltip="Следующая страница" (click)="onClickPage('next')" [disabled]="page>quantityPages.length-2">
+  <mat-icon>navigate_next</mat-icon>
+</button>

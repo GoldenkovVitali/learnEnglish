@@ -1,0 +1,26 @@
+<section class="header-textbook">
+  <div class="section-menu">
+    <app-buttons-dictionary [page]="page" *ngIf="isDictionary"></app-buttons-dictionary>
+    <app-buttons-category
+    *ngIf="!isDictionary"
+    [group]="group"
+    [colorLink]="colorLink"
+    (clickCategory)="onClickCategory($event)"></app-buttons-category>
+    <app-buttons-game></app-buttons-game>
+    <button mat-icon-button matTooltip="НАСТРОЙКИ" (click)="onClickSettings()">
+      <mat-icon>tune</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="{{!isDictionary ? 'СЛОВАРЬ' : 'УЧЕБНИК'}}"
+     (click)="isDictionary=!isDictionary"
+     [routerLink]="!isDictionary ? ['./dictionary', 'studied', 'page', 0] : ['./group', group, 'page', 0]">
+      <mat-icon>{{!isDictionary ? 'menu_book' : 'book'}}</mat-icon>
+    </button>
+  </div>
+  <div>
+    <app-pagination
+    [isDictionary]='isDictionary'
+    [page]="page"
+    [quantityPages]="quantityPagesArray"></app-pagination>
+  </div>
+</section>
+<router-outlet></router-outlet>

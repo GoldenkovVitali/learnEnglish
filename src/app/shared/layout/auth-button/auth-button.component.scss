@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  @include media-max-width {
+    & .auth-button__button {
+      width: 100px;
+      margin-top: 18px;
+    }
+  }
+  @include media-desktop {
+    & .auth-button__button {
+      width: 100px;
+      margin-top: 18px;
+    }
+  }
+  @include media-tablet-landscape {
+    & .auth-button__button {
+      width: 55px;
+      margin-top: 18px;
+      font-size: 14px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & .auth-button {
+      width: 55px;
+    }
+  }
+  @include media-tablet-portrait {
+    & .auth-button__button {
+      width: 55px;
+      margin-top: 18px;
+      font-size: 14px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & .auth-button {
+      width: 55px;
+    }
+  }
+  @include media-mobile {
+    & .auth-button__button {
+      width: 55px;
+      margin-top: 18px;
+      font-size: 14px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & .auth-button {
+      width: 55px;
+    }
+  }
+
+  & button {
+  }
+}

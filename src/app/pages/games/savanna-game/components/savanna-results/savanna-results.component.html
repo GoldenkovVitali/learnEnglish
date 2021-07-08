@@ -1,0 +1,15 @@
+<div class="savanna-body">
+  <div class="savanna-results hidden" id="savanna-results-page">
+    <div class="savanna-results-correct">
+        <span class="savanna-name savanna-right-answers">Правильно:   {{rightAnswers}}
+        </span>
+    </div>
+    <div class="savanna-results-errors">
+        <span class="savanna-name savanna-wrong-answers">Ошибок:   {{wrongAnswers}}
+        </span>
+    </div>
+    <button routerLink="/games/savanna/" [queryParams]="{startFromMenu: true}"  class="savanna-new-game-button" id="savanna-reset-button">
+      Новая игра
+    </button>
+  </div>
+</div>

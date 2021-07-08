@@ -1,0 +1,27 @@
+<div class="game-page">
+  <div class="game-page__joystick">
+    <img src="../../../assets/img/games-bg.png" alt="joystick" class="game-page__bg">
+  </div>
+
+  <h4>Развлекайся и учись!</h4>
+
+    <div class="game-page__content">
+        <a routerLink="savanna" [queryParams]="{startFromMenu: true}" class="game-page__link">
+          Саванна
+          <img src="../../../assets/img/savannah-icon.png" alt="savannah">
+        </a>
+        <a routerLink="sprint" [queryParams]="{startFromMenu: true}"  class="game-page__link">
+          Спринт
+          <img src="../../../assets/img/sprint.png" alt="sprint">
+        </a>
+        <a routerLink="audiocall" [queryParams]="{startFromMenu: true}" class="game-page__link">
+          Аудиоколл
+          <img src="../../../assets/img/audiocall-icon.png" alt="audiocall">
+        </a>
+        <a routerLink="/words-puzzle" class="game-page__link">
+          Конструктор слов
+          <img src="../../../assets/img/puzzle-icon.png" alt="puzzle">
+        </a>
+    </div>
+</div>
+

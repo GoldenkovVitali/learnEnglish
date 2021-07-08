@@ -1,0 +1,213 @@
+
+<div class="container">
+    <div class="{{classHeaderContainer}}">
+         <h1>СПРИНТ</h1>
+         <br/>
+         <button class="start-button"  (click)="
+            update();
+            getWords();
+            startTimer();
+            hiddenScoreClass='hidden';
+            timeLeft=60; 
+            CloseStartScreenClass();
+            startScreenClass='start-screen-no-background';
+            CloseHeaderContainerClass();
+             playAudioTimer()        
+            " >         
+            Начать
+     
+         </button>
+    </div>
+    <div class="{{startScreenClass}}">
+     <div class="{{promoInfoClass}}">
+          <h2>СПРИНТ</h2>
+        <br/>
+        <h3 >
+            Мини-игра «Спринт» - это тренировка для повторения заученных слов из вашего словаря.
+            После запуска игры вы увидите слово и перевод. Вам нужно выбрать, правильно это или неправильно.
+                <br/>
+
+            1. Используйте мышь, чтобы выбрать.
+            <br/>
+            2. Используйте клавиши влево и вправо.
+        </h3>
+    
+     </div> 
+    <div *ngIf="display" class="{{gameClass}}">
+                <div *ngIf="displayStatistics" class="{{gameClass}}">
+                    <div  id="page_background"class="{{statisticClass}}">
+                        <div class=" {{confettiClass}} ">
+                            <div class="{{chosenWordCardClass}}">
+                                    <button class="{{closeWordCardButtonClass}}" (click)=PlayWordAudio()> 
+                                     <img src="https://img2.freepng.ru/20180531/wcr/kisspng-computer-icons-sound-home-icon-5b100e34975241.6664415515277788686198.jpg"
+                                        width="15" height="15"
+                                         alt="audioButton"></button> 
+    
+                                    {{describeWordBlockTranslation}} 
+
+                               
+                                    <button class="{{closeWordCardButtonClass}}" (click)=ClosePopUpWindow()>x</button> <br>
+
+                                {{describeWordBlockTranscription}}<br>
+                                {{this.describeWordBlockTextExample}}
+                            </div>
+                            <div *ngIf="statisticInfoForTable"  class="{{statisticClassTable}}" > 
+                                <h4>Краткосрочная статистика
+                                    <button  (click)= ChangeStatisticsWindow()>x</button> <br>
+                                </h4>  
+                                <ul >
+                                    <li *ngFor="let statisticsItem of statisticInfoForTable; index as i; first as isFirst"
+                                    [style.color]="getColor(i)" >  
+                                        {{i+1}}.   {{ statisticsItem }}
+                                    </li>  
+                                </ul>
+                            </div>
+                            <div >
+                               
+                                <h2>
+                                Уровень пройден 
+                                <button  class="gradient-button-sound" (click)=ChangeWindowSizeStatistic()>
+                                     <img src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-23-512.png"
+                                     width="30" height="30"
+                                      alt="fullScreenButton">
+                                </button>
+                                <button class="gradient-button-background"  (click)= "BgImageChange(true)"  >
+                                    <img src="https://image.flaticon.com/icons/png/512/93/93638.png"
+                                    width="30" height="30"
+                                     alt="ImageButton">
+                                </button> 
+                                <button class="gradient-button-statistics"  (click)=ChangeStatisticsWindow()>
+                                    <img src="https://img2.freepng.ru/20180420/xqe/kisspng-chart-computer-icons-statistics-report-elevator-repair-5ad986adef4327.78399718152420522998.jpg"
+                                    width="30" height="30"
+                                     alt="StatisticButton">
+                             </button> <br>
+                                </h2>
+                                
+                            </div> 
+                            <div class="wordStatisticContainer">
+                                <div   id="wordsYouKnow">  
+                                    правильно:  
+                                    <h4>{{wordsYouKnowQuantity}}</h4>  
+                                    <ul>
+                                        <li *ngFor="let item of rightWords" (click)="onSelectItem(item);getSelectedWordCardId()"
+                                            [class.active]="item == activeItem">  
+                                            {{ item }}
+                                        </li>   
+                                    </ul>
+                                </div>
+                                <div > 
+                                    ошибки :
+                                    <h4>{{wordsYouDoNotKnowQuantity}}</h4>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of wrongWords" (click)="onSelectItem(item);getSelectedWordCardId()"
+                                                [class.active]="item == activeItem">
+                                                {{ item }}
+                                            </li>
+                                        </ul>
+                                    </div>  
+                                 </div>
+                            </div>
+                        </div>
+                        <button class="gradient-button-right" (click)="
+                             updateStatistics();
+                             update();
+                            isSoundOn=true;
+                            chosenWordCardClass = 'hidden';
+                            startScreenClass='start-screen';
+                            promoInfoClass='';
+                            ngOnInit();
+                            level = 0;
+                            round = 0;
+                             ">
+                            Начать игру заново
+                        </button>   
+                       
+
+                    </div>
+                </div> 
+                <div class="{{levelAndRoundChoice}}">
+                   <div class="{{levelAndRoundChoice}}">
+                    <button class="closeButton" (click)="update();pauseAudioTimer();quitGame(); ngOnInit()" > 
+                        Закрыть окно
+                    </button>
+                   <div>  
+                    <label class="level__label">  
+                        Уровень 
+                    </label>
+                    <select class="level__select"   (change)="onLevelChange($event.target.value)">
+                        <option  value="1"> 1 </option>
+                        <option  value="2"> 2 </option>
+                        <option  value="3"> 3 </option>
+                        <option  value="4"> 4 </option>
+                        <option  value="5"> 5 </option>
+                        <option  value="6"> 6 </option>
+                    </select>
+                    <label  class="round__label">
+                         Раунд
+                    </label>
+                    <select class="round__select" (change)="onRoundChange($event.target.value)">
+                        <option value="1"> 1 </option>
+                        <option  value="2"> 2 </option>
+                        <option  value="3"> 3 </option>
+                        <option  value="4"> 4 </option>
+                        <option  value="5"> 5 </option>
+                        <option  value="6"> 6 </option>
+                        <option  value="7"> 7 </option>
+                        <option  value="8"> 8 </option>
+                        <option  value="9"> 9 </option>
+                        <option  value="10"> 10 </option>
+                        <option  value="11"> 11 </option>
+                        <option  value="12"> 12 </option>
+                        <option  value="13"> 13 </option>
+                        <option  value="14"> 14 </option>
+                        <option  value="15"> 15 </option>
+                        <option  value="16"> 16 </option>
+                        <option  value="17"> 17 </option>
+                        <option  value="18"> 18 </option>
+                        <option  value="19"> 19 </option>
+                        <option  value="20"> 20 </option>
+                        <option  value="21"> 21 </option>
+                        <option  value="22"> 22 </option>
+                        <option  value="23"> 23 </option>
+                        <option  value="24"> 25 </option>
+                        <option  value="26"> 26 </option>
+                        <option  value="27"> 27 </option>
+                        <option  value="28"> 28 </option>
+                        <option  value="29"> 29 </option>
+                        <option  value="30"> 30 </option>
+                    </select>
+                    <button (click)="isSoundOn=!isSoundOn; pauseAudioTimer(); playAudioTimer()" 
+                        type="button" class="gradient-button-sound">
+                        <img 
+                        src="https://img2.freepng.ru/20180906/sac/kisspng-portable-network-graphics-computer-icons-scalable-svg-56515-sfon-5b9169a22017f5.8584771115362564181315.jpg"
+                        width="30" height="30" alt="OffSound">
+                    </button> 
+                    <button  class="gradient-button-sound" (click)=ChangeWindowSize()>
+                     <img src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-23-512.png"
+                     width="30" height="30" alt="fullScreenButton">
+                    </button>
+                    <div class="word-and-translation">
+                        <div>
+                            <div class="{{hiddenScoreClass}}" id="blink7"  > + {{wordsYouKnowQuantity*10}}  </div> 
+                            <div class="timer-css">{{timeLeft}}</div> 
+                        </div>
+                        <div *ngIf="this.words" class="show-words-and-translation">
+                            <span>{{this.words[index]}}</span>   -   <span>{{this.translations[index]}}</span>
+                        </div>
+                    </div>
+                    <div class="game-bar">
+                        <div class="choose-word-translation"></div>
+                        <button class="gradient-button-right" 
+                        (click)="checkWordTranslationMatch(true);timeLeft=60;delayedHide()">&#9668; правильно</button>
+                        <button class="gradient-button-wrong" 
+                        (click)="checkWordTranslationMatch(false);timeLeft=60;delayedHide()"> неправильно 	&#9658;</button>
+                    </div>
+                <div>
+            </div>
+    </div>
+  
+</div>
+<script id="myScript"
+ src="https://api-maps.yandex.ru/2.1?apikey=3ce3be84-5f4d-4000-8c66-90be614290bf&load=package.full&lang=en-US">
+</script>

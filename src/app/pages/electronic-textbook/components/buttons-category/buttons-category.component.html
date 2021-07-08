@@ -1,0 +1,7 @@
+<button mat-icon-button matTooltip="КАТЕГОРИЯ СЛОВ"
+*ngFor="let category of categories; let i = index" (click)="onClickCategory(i)"
+[routerLink]="['./group', i, 'page', 0]" routerLinkActive="active"
+[style.color]='i === group ? colorLink : "black"'
+>
+ <mat-icon>looks_{{category}}</mat-icon>
+</button>

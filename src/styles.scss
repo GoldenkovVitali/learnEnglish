@@ -1,0 +1,12 @@
+@import '~normalize.scss';
+@import './scss/variables.scss';
+@import './scss/mixins.scss';
+@import './scss/common.scss';
+@import './scss/material.scss';
+
+.snackbar {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: rgba(0, 0, 0, 0.85);
+  box-shadow: none;
+}

@@ -1,0 +1,78 @@
+<div *ngIf="startGame" (keyup)="checkWordByKey($event)" class="wrapper">
+  <div class="game-content">
+    <div class="audiocall-game">
+      <div (click)="repeatSound()" class="speaker">
+        <img src="./assets/img/speaker.png" alt="speaker">
+      </div>
+
+      <div class="words-list">
+        <div
+          class="words"
+          *ngFor="let wordItem of currentWords"
+          (click)="checkWord(wordItem)"
+          [ngClass]="{correct: wordItem.correctStyle, errorStyle: wordItem.errorStyle}"
+        >
+        {{currentWords.indexOf(wordItem) + 1}}. {{wordItem.wordTranslate}}
+      </div>
+      </div>
+
+      <div class="additional-buttons">
+        <button (click)="showAnswer()" class="help">Подсказка</button>
+        <button
+          routerLink="/games"
+          (click)="addStatistic()"
+          class="go-back-btn"
+          >
+          Завершить
+        </button>
+      </div>
+
+      <div class="answer">{{answer}}</div>
+
+      <button
+      class="forward"
+      [ngClass]="{active: active}"
+      (click)="startNextRound()"
+      ></button>
+
+    </div>
+
+    <div *ngIf="correctAnswer" class="word-info">
+      <img src="{{wordImg}}" alt="wordImg">
+      <p>{{wordExample}}</p>
+    </div>
+    <button (click)="changeFullscreenMode()" class="fullscreen-btn">
+      <img src="../../../../../../assets/img/audiocall-fullscreen.png" alt="fullscreen-mode">
+    </button>
+
+  </div>
+</div>
+
+<div class="end-game-wrapper">
+  <div *ngIf="endGame" class="end-game">
+    <h4>Слова закончились</h4>
+    <img src="../../../../../../assets/img/audiocall_results.jpg" alt="words-and-people" class="words-and-people">
+    <div class="statistic">
+      <p>Результаты</p>
+      <p class="result-correct">Правильных ответов: {{numberOfCorrectAnswers}}</p>
+      <p class="result-errors">Неправильных ответов: {{numberOfErrors}}</p>
+    </div>
+
+    <div
+      *ngFor="let track of wordsFromApi"
+      (click)="playTrack($event)"
+      class="word-track"
+      id="{{wordsFromApi.indexOf(track)}}"
+    >
+      <img
+        (click)="playTrack($event)"
+        src="../../../../../../assets/img/speaker.png"
+        alt="start-track-play"
+        class="track-speaker"
+        id="{{wordsFromApi.indexOf(track)}}"
+      >
+      {{track.word}} - {{track.wordTranslate}}
+    </div>
+    <a routerLink="/games" (click)="addStatistic()" class="back-to-game-menu">В игры</a>
+  </div>
+</div>

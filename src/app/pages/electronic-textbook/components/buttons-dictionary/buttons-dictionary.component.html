@@ -1,0 +1,8 @@
+<button mat-button matTooltip="КАТЕГОРИЯ СЛОВ"
+*ngFor="let button of buttons; let i = index"
+[routerLink]="['./dictionary', button.en, 'page', 0 ]"
+[class.active]="button.en == activeItem"
+(click)="onClick(button.en)"
+>
+{{button.rus}}
+</button>

@@ -1,0 +1,35 @@
+<section class="promo__intro">
+  <img src="assets/img/promo-img.png" class="promo__image" alt="promo" />
+  <div class="promo__text">
+    <ng-container *ngIf="decriptionCondition">
+      <h1 class="learn-language">Учите английский с RS Lang!</h1>
+      <hr />
+      <p class="dicription">
+        RS Lang – приложение для изучения иностранных слов с отслеживанием индивидуального прогресса и
+        мини-играми.
+      </p>
+      <p class="discription">
+        Для изучения слов и примеров их использавания в приложении используются:
+      </p>
+      <div class="promo-list">
+        <ul class="component-list">
+          <li>электронный учебник с информационными карточками слов</li>
+          <li>четыре мини-игры, чтобы не заскучать за учебником</li>
+          <li>индивидуальная статистика для отслеживания личного прогресса</li>
+        </ul>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!decriptionCondition">
+      <iframe width="545" height="409" src="https://www.youtube.com/embed/PADM7ghlGcw"
+       title="YouTube video player"
+       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+       allowfullscreen>
+      </iframe>
+    </ng-container>
+    <div app-promo-button (click)="showHiddenContent()"></div>
+  </div>
+</section>
+<section class="promo__video">
+  <div class="promo__content"></div>
+</section>

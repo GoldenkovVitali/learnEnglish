@@ -1,0 +1,89 @@
+<div class="statistics__wrapper">
+  <h2>Статистика за сегодня</h2>
+  <div class="statistics__games">
+    <div class="statistics__game savannah">
+      <h2>Саванна</h2>
+      <div>
+        <h3>Изучено слов:</h3>
+        <p>{{savannahCorrect}}</p>
+      </div>
+      <div>
+        <h3>% правильных ответов:</h3>
+        <p>{{percentRightSavannah}} %</p>
+      </div>
+      <div>
+        <h3>Самая длинная серия правильных ответов:</h3>
+        <p>{{savannahRightStreak}}</p>
+      </div>
+    </div>
+
+    <div class="statistics__game sprint">
+      <h2>Спринт</h2>
+      <div>
+        <h3>Изучено слов:</h3>
+        <p>{{sprintCorrect}}</p>
+      </div>
+      <div>
+        <h3>% правильных ответов:</h3>
+        <p>{{percentRightSprint}} %</p>
+      </div>
+      <div>
+        <h3>Самая длинная серия правильных ответов:</h3>
+        <p>{{sprintRightStreak}}</p>
+      </div>
+    </div>
+
+    <div class="statistics__game audiocall">
+      <h2>Аудиоколл</h2>
+      <div>
+        <h3>Изучено слов:</h3>
+        <p>{{audiocallCorrect}}</p>
+      </div>
+      <div>
+        <h3>% правильных ответов:</h3>
+        <p>{{percentRightAudiocall}} %</p>
+      </div>
+      <div>
+        <h3>Самая длинная серия правильных ответов:</h3>
+        <p>{{audiocallRightStreak}}</p>
+      </div>
+    </div>
+
+    <div class="statistics__game constructor">
+      <h2>Конструктор слов</h2>
+      <div>
+        <h3>Изучено слов:</h3>
+        <p>{{constructorCorrect}}</p>
+      </div>
+      <div>
+        <h3>% правильных ответов:</h3>
+        <p>{{percentRightConstructor}} %</p>
+      </div>
+      <div>
+        <h3>Самая длинная серия правильных ответов:</h3>
+        <p>{{constructorRightStreak}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="statistics__all">
+    <h2>Всего слов изучено:</h2>
+    <p>{{allCorrectAnswers}}</p>
+  </div>
+
+  <div class="statistics__percent">
+    <h2>% правильных ответов:</h2>
+    <p>{{percentRightAll}} %</p>
+  </div>
+
+  <h2>Статистика за все время</h2>
+  <div class="statistics__charts">
+      <div class="chart-one">
+        <app-statistic-chart [wordsToday]='allCorrectAnswers'></app-statistic-chart>
+      </div>
+
+      <div class="chart-two">
+        <app-common-statistic-chart [wordsToday]='allCorrectAnswers'></app-common-statistic-chart>
+      </div>
+  </div>
+</div>

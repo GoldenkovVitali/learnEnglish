@@ -1,0 +1,11 @@
+.wrapper-page {
+  transition: background-color 0.5s;
+  height: calc(100% - 65px);
+  .container-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+  }
+}

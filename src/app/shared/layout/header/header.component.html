@@ -1,0 +1,17 @@
+<div app-header-logo></div>
+<div app-header-menu [isAuthenticated]="isAuthenticated"></div>
+<div app-auth-button (click)="openModal(true)" *ngIf="!token && !id"></div>
+
+<div class="auth-user" *ngIf="token && id">
+  <p>{{ userName }}</p>
+  <img [src]="userImg" alt="avatar" />
+  <button
+    *ngIf="token && id"
+    (click)="logOut()"
+    class="logout-button"
+    mat-raised-button
+    color="warn"
+  >
+    Выйти
+  </button>
+</div>

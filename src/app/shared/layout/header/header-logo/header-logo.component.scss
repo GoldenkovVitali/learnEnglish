@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  margin-right: auto;
+  @include media-max-width {
+    & .logo__link {
+      width: 132px;
+      height: 74px;
+    }
+    & .logo__image {
+      width: 96px;
+      height: 80px;
+    }
+  }
+  @include media-desktop {
+  }
+  @include media-tablet-landscape {
+    & .logo__link {
+      width: 62px;
+      height: 52px;
+    }
+    & .logo__image {
+      width: 60px;
+      height: 50px;
+    }
+  }
+  @include media-tablet-portrait {
+    & .logo__link {
+      width: 62px;
+      height: 52px;
+    }
+    & .logo__image {
+      width: 60px;
+      height: 50px;
+    }
+  }
+  @include media-mobile {
+    & .logo__link {
+      width: 62px;
+      height: 52px;
+    }
+    & .logo__image {
+      width: 60px;
+      height: 50px;
+    }
+  }
+
+  & .logo__link {
+    display: block;
+  }
+}
